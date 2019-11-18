@@ -1,0 +1,10 @@
+<h1>Artists</h1>
+
+<%= link_to 'Back to Chart', billboard_path(@billboard) %> |
+<%= link_to 'Add Artist', new_billboard_artist_path(@billboard) %>
+<ol>
+  <% @artists.each do |artist| %>
+  <li><%= link_to artist.name, [@billboard, artist] %></li>
+  <% end %>
+</ol>
+

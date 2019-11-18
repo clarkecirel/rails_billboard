@@ -1,12 +1,26 @@
-<div class='ui card'>
-  <div class='content'>
-    <p class='header'>
-      <%= @billboard.chart %>
-    </p>
-  </div>
+<h1 class='ui header'> Charts </h1>
+
+<%= link_to 'Home', root_path %> |
+<%= link_to 'Artists Index', billboard_artists_path(@billboard) %>
+
+<table class='ui striped table'>
+  <thead>
+    <tr class='center aligned'>
+        <th colspan='4'></th>
+      </tr>
+  </thead>
   
-  <div class='extra content'>
-      <%= link_to 'Edit', edit_billboard_path(@billboard) %>
-      <%= link_to 'Back', billboards_path %>
-  </div>
-</div>
+  <% @billboard.artists.each do |artist| %>
+  <tbody>
+    <tr class='center aligned' %>
+    <td><strong><%= artist.name %></strong> |
+    <i><%= link_to 'Show', billboard_artist_path(@billboard, artist) %></i></td>
+    <td><h4>Genre</h4><i><%= artist.genre %></i></td>
+    </tr>
+
+    <% end %>
+  </tbody>
+</table>
+
+
+

@@ -1,16 +1,16 @@
-<h1 class='ui header'>Billboards</h1>
+<h1 class='ui header'>Billboard Charts</h1>
+
+<%= link_to 'New Chart', new_billboard_path %>
+<hr />
 
 <% @billboards.each do |billboard| %>
   
-  <h1> <%= billboard.chart %></h1>
+<h1> <%= billboard.chart %></h1>
   
-  <%= link_to 'Show', billboard_path(billboard) %>
-  <%= link_to 'Edit', edit_billboard_path(billboard)%>
-  <%= link_to 'Delete', billboard_path(billboard), method: :delete %>
+<%= link_to 'Show', billboard_path(billboard) %> |
+<%= link_to 'Edit', edit_billboard_path(billboard)%> |
+<%= link_to 'Delete', billboard_path(billboard), method: :delete %>
+
+<% end %>
   
-  <% end %>
-  
-  <br>
-  
-  <%= link_to 'New Chart', new_billboard_path %>
 
